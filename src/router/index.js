@@ -7,7 +7,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Home from '../pages/Home'
 
 
-
+// 路由配置，路由配置列表，将需要访问到的路由在这里进行配置 
+// 可以将路由模块化，在其他文件以这个结构写， 然后再到这里用 展开运算符展开即可
 const routerList =[{
     path:'/home',
     // component:(props)=>  <Home {...props} />
@@ -23,6 +24,7 @@ const  getRouter=(
   <div>
     <Switch>
         {
+          // 通过 map 方法， 进行路由列表配置，并在 app.js 处渲染
           routerList.map((item,idx)=>{
            return (<Route
                 key={'route' + idx}

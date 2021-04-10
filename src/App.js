@@ -42,6 +42,7 @@ class App extends Component{
     console.log('app',getRouter)
     return (
         <div style={{height:'100%',background:'#fff'}}> 
+            {/* 路由配置渲染 */}
             {getRouter}
           <div style={{width:'100%' ,position:'fixed',bottom:0}}>
             <TabBar
