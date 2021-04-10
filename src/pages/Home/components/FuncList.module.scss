@@ -1,0 +1,16 @@
+.FuncListPage{
+  background-color: #fff;
+
+  .iconContent{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    .iconBox{
+      text-align: center;
+      width: 60px;
+      height: 56px;
+      padding:14px 0 10px;
+      flex:1 0  auto;
+    }
+  }
+}

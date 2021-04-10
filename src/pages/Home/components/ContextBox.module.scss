@@ -1,0 +1,88 @@
+.ContentBox{
+  background-color: #fff;
+
+  margin-top: 10px;
+  .iconContent{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    .iconBox{
+      text-align: center;
+      width: 60px;
+      height: 56px;
+      padding:14px 0 10px;
+      flex:1 0  auto;
+    }
+  }
+  .content{
+  .contentImgList{
+    display:  grid ;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+  .imgBox{
+      width: 95px;
+      height: 133px;
+      left: 8px;
+      top: 334px;
+      color: rgba(0, 0, 0, 1);
+      font-size: 11px;
+      line-height: 150%;
+      text-align: left;
+      img{
+          width: 95px;
+          height: 95px;
+          left: 113px;
+          top: 239px;
+          vertical-align: top;
+          object-fit: cover;
+      }
+  }
+  .contentText{
+    margin: 0;
+    padding: 0;
+    width: 95px;
+    height: 38px;
+    left: 8px;
+    top: 334px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 11px;
+    line-height: 150%;
+    text-align: left;
+    }
+
+  }
+  .contentList{
+    padding:0 10px;
+    .listBox{
+      width: 100%;
+      height: 75px;
+      overflow: hidden;
+      margin-top: 10px;
+      img{
+        width: 95px;
+        height: 95px;
+        left: 113px;
+        top: 239px;
+        vertical-align: top;
+        object-fit: cover;
+        float: left;
+        }
+        .textBox{
+          float: left;
+          padding-left: 20px;
+          .contentText{
+            margin: 0;
+            padding: 0;
+            height: 38px;
+            left: 8px;
+            top: 334px;
+            color: rgba(0, 0, 0, 1);
+            font-size: 11px;
+            line-height: 150%;
+            text-align: left;
+            }
+        }
+      }
+    }
+  }
+}
