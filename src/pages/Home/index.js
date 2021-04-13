@@ -6,6 +6,7 @@ import BannerHome from './components/banner'
 import FuncList from './components/FuncList'
 import ContentBox from './components/ContentBox'
 import styles from './index.module.scss'
+import * as util from '../../utils'
 class Home extends Component{
   constructor(props){
     super(props)
@@ -70,8 +71,10 @@ class Home extends Component{
     // ],
     }
   }
-  componentDidMount(){
-
+  async componentDidMount(){
+    let res  = await util.api.getDataList({id:666})
+    
+     console.log("结果",res)
   }
   render(){
     let { tabs,contentList=[],sourceData} = this.state
@@ -80,7 +83,7 @@ class Home extends Component{
     <div className={styles['home-page']}>
      <div className={styles['search-header']}>
        <div >
-            <Icon type='check-circle'></Icon>
+           <i className="iconfont  icon-sousuo" style={{color:'#000'}}></i>
         </div>
         <div className={styles['search']}>
             <SearchBar
