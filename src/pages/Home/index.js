@@ -5,6 +5,7 @@ import Input from 'antd-mobile/lib/input-item/Input'
 import BannerHome from './components/banner'
 import FuncList from './components/FuncList'
 import ContentBox from './components/ContentBox'
+import Iconfont from "../../widget/iconfont/index"
 import styles from './index.module.scss'
 import * as util from '../../utils'
 class Home extends Component{
@@ -81,9 +82,14 @@ class Home extends Component{
     return (
 
     <div className={styles['home-page']}>
+
      <div className={styles['search-header']}>
        <div >
-           <i className="iconfont  icon-sousuo" style={{color:'#000'}}></i>
+           {/* <i className="iconfont  icon-sousuo" style={{color:'#000'}}></i> */}
+           <Iconfont src="icon-sousuo" style={{marginTop:10}} className="search search1"></Iconfont>
+           <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-sousuo"></use>
+          </svg>
         </div>
         <div className={styles['search']}>
             <SearchBar
