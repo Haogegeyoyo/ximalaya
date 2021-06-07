@@ -13,6 +13,7 @@ class Home extends Component{
     super(props)
     this.state={
       search:'',
+      currentIndex:0,
       tabs: [
         { title: '热门', sub: '1' },
         { title: '分类', sub: '2' },
@@ -77,6 +78,28 @@ class Home extends Component{
     
      console.log("结果",res)
   }
+
+  /**   ---------------------渲染函数----------------------------- */
+  renderContent=()=>{
+    let {currentIndex,sourceData} = this.state
+    return (
+      <div>
+        {currentIndex ==  0 && 
+          <div><BannerHome/>
+              <FuncList></FuncList>
+              <ContentBox  data={{title:'猜你喜欢', type :'imgList' }}  sourceData={sourceData}></ContentBox>
+              <ContentBox  data={{title:'最新有声小说', type :'list' }}  sourceData={sourceData}></ContentBox>
+              <ContentBox  data={{title:'宝贝最爱听', type :'list' }}  sourceData={sourceData}></ContentBox>
+              <ContentBox  data={{title:'音乐好时光', type :'imgList' }}  sourceData={sourceData}></ContentBox>
+              <ContentBox  data={{title:'精选专题', type :'list' }}  sourceData={sourceData}></ContentBox>
+              <ContentBox  data={{title:'直播', type :'list' }}  sourceData={sourceData}></ContentBox>
+          </div>  }  
+          {currentIndex == 1 && <div>
+              
+              </div>}
+      </div>
+    )
+  }
   render(){
     let { tabs,contentList=[],sourceData} = this.state
     return (
@@ -86,10 +109,7 @@ class Home extends Component{
      <div className={styles['search-header']}>
        <div >
            {/* <i className="iconfont  icon-sousuo" style={{color:'#000'}}></i> */}
-           <Iconfont src="icon-sousuo" style={{marginTop:10}} className="search search1"></Iconfont>
-           <svg className="icon" aria-hidden="true">
-              <use xlinkHref="#icon-sousuo"></use>
-          </svg>
+           <Iconfont src="icon-message" ></Iconfont>
         </div>
         <div className={styles['search']}>
             <SearchBar
@@ -102,30 +122,20 @@ class Home extends Component{
         <div>
           
         </div>
-          <div > 
-            <Icon type='check-circle' style={{marginRight: 15}}></Icon>
-            <Icon type='check-circle'></Icon>
-            {/* <Icon type='check-circle'></Icon>       */}
+          <div style={{lineHeight:1}}> 
+          <Iconfont src="icon-_time-copy" style={{marginRight:10}}></Iconfont>
+          <Iconfont src="icon-download_to-copy" ></Iconfont>
           </div>
      </div>
      <Tabs 
-     
         tabs={tabs}
         onChange = {(tab,index)=>{
-          console.log(tab,index)
+          this.setState({currentIndex:index})
         }}
-     >
+        >
+       {this.renderContent()}
      </Tabs>
-     <BannerHome/>
-     <FuncList></FuncList>
-   
-     <ContentBox  data={{title:'猜你喜欢', type :'imgList' }}  sourceData={sourceData}></ContentBox>
-     <ContentBox  data={{title:'最新有声小说', type :'list' }}  sourceData={sourceData}></ContentBox>
-     <ContentBox  data={{title:'宝贝最爱听', type :'list' }}  sourceData={sourceData}></ContentBox>
-     <ContentBox  data={{title:'音乐好时光', type :'imgList' }}  sourceData={sourceData}></ContentBox>
-     <ContentBox  data={{title:'精选专题', type :'list' }}  sourceData={sourceData}></ContentBox>
-     <ContentBox  data={{title:'直播', type :'list' }}  sourceData={sourceData}></ContentBox>
-    
+     
     </div>
     )
   }

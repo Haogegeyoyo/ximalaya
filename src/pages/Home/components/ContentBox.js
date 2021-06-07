@@ -29,16 +29,16 @@ class ContentBox extends Component {
           ></NavBar>
           <div className={styles.content}>
               { data.type == 'list' ? (
-                    <div className={styles.contentList}>{sourceData.map(item =>{
-                      return (<div className = {styles.listBox}>
-                                  <img   src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F5714852882%2F1000&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg'></img>
+                    <div className={styles.contentList}>{sourceData.map((item,index) =>{
+                      return (<div className = {styles.listBox} key={"list_"+index}>
+                                  <img   src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=726300988,2609354219&fm=26&gp=0.jpg'></img>
                                   <div className={styles.textBox}><p  className={styles.contentText}> {item.text}</p></div>
                             </div>)
                     })}</div>
               )
-              :<div className={styles.contentImgList} >{sourceData.map(item =>{
-                  return (<div className = {styles.imgBox}>
-                              <img   src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F5714852882%2F1000&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg'></img>
+              :<div className={styles.contentImgList} >{sourceData.map((item,index) =>{
+                  return (<div className = {styles.imgBox}  key={"unlist_"+index}>
+                              <img   src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=833816062,710383742&fm=26&gp=0.jpg'></img>
                               <p className={styles.contentText}> {item.text}</p>
                         </div>)
               })
